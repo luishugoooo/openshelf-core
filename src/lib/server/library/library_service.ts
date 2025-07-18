@@ -27,10 +27,6 @@ export const libraryService = new Elysia({ prefix: '/library' })
 			const books = await db.query.books.findMany();
 			return books.map((book) => ({
 				...book,
-				coverUrl:
-					book.cover && book.cover.length > 0
-						? process.env.BASE_URL + '/library/cover/' + book.id
-						: undefined,
 				cover: undefined,
 				filePath: undefined
 			}));
