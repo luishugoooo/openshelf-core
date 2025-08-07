@@ -1,38 +1,48 @@
-# sv
+# OpenShelf
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+> [!WARNING]
+> **This project is WIP**
+> 
+> OpenShelf is currently WIP and not usable beyond testing purposes. Especially Authentication is unfinished and untested.
 
-## Creating a project
+## About
 
-If you're seeing this, you've probably already done this step. Congrats!
+OpenShelf aspires to be a robust solution to self-host ebook libraries.
 
-```bash
-# create a new project in the current directory
-npx sv create
+This monorepo contains:
 
-# create a new project in my-app
-npx sv create my-app
-```
+- **Backend**: The core openshelf service (WIP)
+- **WebUI**: The official web interface (Planned)
+- **Cross-Platform App**: The official cross-platform application (WIP)
+- Some utility libraries (custom epub parser, ...)
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Goals
 
-```bash
-npm run dev
+- **Sync and offline capabilities:** The official app is being built with offline use in mind and syncs with the server automatically (active WIP)
+- **WebUI:** The WebUI is currently being built for administration, with online content streaming as a future possibility
+- **Low barrier of entry:** The performance of the core service is constantly tested against a Raspberry PI, so the cost of self-hosting is kept minimal
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Screenshots (Extremely early)
 
-## Building
+<img width="802" height="527" alt="image" src="https://github.com/user-attachments/assets/d75df2ee-b84f-4683-8e17-342cddc4bd0e" />
 
-To create a production version of your app:
 
-```bash
-npm run build
-```
 
-You can preview the production build with `npm run preview`.
+## Architecture
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This project is organized as a monorepo with the following packages:
+
+- `packages/backend/` - Core Bun.js/Elysia service
+- `packages/app/` - Flutter cross-platform app 
+- `packages/webui/` - Web interface (planned)
+- `packages/epub/` - Typescript EPUB processing utilities
+- `packages/shared/` - Shared TypeScript types and utilities
+
+## Contributing
+
+This is currently a personal project with many design choices to be made. Once somewhat stable, PRs are welcome.
+
+## License
+
+The project is licensed under AGPL 3.0
