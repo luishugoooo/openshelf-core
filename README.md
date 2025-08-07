@@ -7,21 +7,15 @@
 
 ## About
 
-OpenShelf aspires to be a robust solution to self-host ebook libraries.
+OpenShelf aspires to be a robust solution to self-host ebook libraries with minimal friction. The ultimate goal is that everyone with extremely basic knowledge of computers should be able to setup their own digital bookshelf, free of censorship and and without centralized control over content.
 
-This monorepo contains:
-
-- **Backend**: The core openshelf service (WIP)
-- **WebUI**: The official web interface (Planned)
-- **Cross-Platform App**: The official cross-platform application (WIP)
-- Some utility libraries (custom epub parser, ...)
-
+This repository contains the core OpenShelf service to host on your homeserver, VPS, RPi or old laptop.
 
 ## Goals
 
 - **Sync and offline capabilities:** The official app is being built with offline use in mind and syncs with the server automatically (active WIP)
-- **WebUI:** The WebUI is currently being built for administration, with online content streaming as a future possibility
-- **Low barrier of entry:** The performance of the core service is constantly tested against a Raspberry PI, so the cost of self-hosting is kept minimal
+- **Low barrier of entry:** The performance of the core service is constantly tested against a Raspberry PI, so the cost of self-hosting is kept minimal.
+- **Accessibility:** Extensive documentation is being worked on, both for end users and developers who want to build upon OpenShelf.
 
 ## Screenshots (Extremely early)
 
@@ -31,13 +25,11 @@ This monorepo contains:
 
 ## Architecture
 
-This project is organized as a monorepo with the following packages:
+This project is organized in multiple repositories:
 
-- `packages/backend/` - Core Bun.js/Elysia service
-- `packages/app/` - Flutter cross-platform app 
-- `packages/webui/` - Web interface (planned)
-- `packages/epub/` - Typescript EPUB processing utilities
-- `packages/shared/` - Shared TypeScript types and utilities
+- This repo - Core OpenShelf service, written in Bun.js/Elysia 
+- [Cross-platform app](https://github.com/luishugoooo/openshelf_app) - Official app for on- and offline reading on all your devices, written in Flutter
+- TBA - Web UI
 
 ## Contributing
 
