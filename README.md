@@ -1,38 +1,40 @@
-# sv
+# OpenShelf
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+> [!WARNING]
+> **This project is WIP**
+> 
+> OpenShelf is currently WIP and not usable beyond testing purposes. Especially Authentication is unfinished and untested.
 
-## Creating a project
+## About
 
-If you're seeing this, you've probably already done this step. Congrats!
+OpenShelf aspires to be a robust solution to self-host ebook libraries with minimal friction. The ultimate goal is that everyone with extremely basic knowledge of computers should be able to setup their own digital bookshelf, free of censorship and and without centralized control over content.
 
-```bash
-# create a new project in the current directory
-npx sv create
+This repository contains the core OpenShelf service to host on your homeserver, VPS, RPi or old laptop.
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Goals
 
-## Developing
+- **Sync and offline capabilities:** The official app is being built with offline use in mind and syncs with the server automatically (active WIP)
+- **Low barrier of entry:** The performance of the core service is constantly tested against a Raspberry PI, so the cost of self-hosting is kept minimal.
+- **Accessibility:** Extensive documentation is being worked on, both for end users and developers who want to build upon OpenShelf.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Screenshots (Extremely early)
 
-```bash
-npm run dev
+<img width="802" height="527" alt="image" src="https://github.com/user-attachments/assets/d75df2ee-b84f-4683-8e17-342cddc4bd0e" />
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
 
-## Building
 
-To create a production version of your app:
+## Architecture
 
-```bash
-npm run build
-```
+This project is organized in multiple repositories:
 
-You can preview the production build with `npm run preview`.
+- This repo - Core OpenShelf service, written in Bun.js/Elysia 
+- [Cross-platform app](https://github.com/luishugoooo/openshelf_app) - Official app for on- and offline reading on all your devices, written in Flutter
+- TBA - Web UI
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Contributing
+
+This is currently a personal project with many design choices to be made. Once somewhat stable, PRs are welcome.
+
+## License
+
+The project is licensed under AGPL 3.0
