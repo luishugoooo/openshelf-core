@@ -23,12 +23,19 @@ export const libraryService = new Elysia({ prefix: '/library' })
 	})
 	.get(
 		'/books',
-		async () => {
-			const books = await db.query.books.findMany();
-			return books.map((book) => ({
-				...book,
+		async ({ user }) => {
+			const books_list = await db
+				.select()
+				.from(books)
+				.leftJoin(
+					user_readings,
+					and(eq(books.id, user_readings.book_id), eq(user_readings.user_id, user?.id ?? -1))
+				);
+			return books_list.map((book) => ({
+				...book.books,
 				cover: undefined,
-				filePath: undefined
+				filePath: undefined,
+				progress: book.user_readings?.progress ?? null
 			}));
 		},
 		{ isAuthenticated: true }
