@@ -27,7 +27,7 @@ This repository contains the core OpenShelf service to host on your homeserver, 
 
 This project is organized in multiple repositories:
 
-- This repo - Core OpenShelf service, written in Bun.js/Elysia 
+- This repo - Core OpenShelf service, written in TypeScript with Bun.js/Elysia and SQLite 
 - [Cross-platform app](https://github.com/luishugoooo/openshelf_app) - Official app for on- and offline reading on all your devices, written in Flutter
 - TBA - Web UI
 
